@@ -11,7 +11,7 @@
     "commander":    "tj/commander.js"
   },
   "bin": {
-    "screenshotdiff": "index.js"
+    "screenshotdiff": "screenshotdiff.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
