@@ -32,7 +32,7 @@ Requires ImageMagick to be installed. Depending on your system, one of the follo
         -c, --css <string>          Custom CSS rules to apply before taking screenshot
         -o, --outputDir <path>      The output dir for images
         -k, --keep                  Keep the A/B screenshots used for the diff
-        -p, --protocol <string>     Protocol to use. Default: "http:"
+        -p, --protocol <string>     Protocol to use. Default: "http"
         -t, --threshold <n>         Compare dissimilarity threshold, in px. Default: 10
         -f, --fuzz <n>              Compare fuzz threshold. Default: 5
         -q, --quality <n>           Compare quality. Default: 100
