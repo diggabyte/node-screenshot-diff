@@ -9,7 +9,7 @@ program
   .option('-c, --css <string>', 'Custom CSS rules to apply before taking screenshot', '')
   .option('-o, --outputDir <path>', 'The output dir for images', './screenshots')
   .option('-k, --keep', 'Keep the A/B screenshots used for the diff')
-  .option('-p, --protocol <string>', 'Protocol to use. Default: "http:"', 'http:')
+  .option('-p, --protocol <string>', 'Protocol to use. Default: http', 'http')
   .option('-t, --threshold <n>', 'Compare dissimilarity threshold, in px. Default: 10', 10)
   .option('-f, --fuzz <n>', 'Compare fuzz threshold. Default: 5', 5)
   .option('-q, --quality <n>', 'Compare quality. Default: 100', 100)
