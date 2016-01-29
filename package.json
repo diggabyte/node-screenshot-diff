@@ -8,7 +8,7 @@
     "webshot":      "brenden/node-webshot",
     "lodash":       "lodash/lodash",
     "phantomjs":    "medium/phantomjs",
-    "decamelize":   "sindresorhus/decamelize"
+    "commander":    "tj/commander.js"
   },
   "bin": {
     "screenshotdiff": "index.js"
