@@ -1,0 +1,34 @@
+{
+  "name": "node-screenshot-diff",
+  "version": "0.0.1",
+  "description": "Generate screenshot diffs for a pair of domains and collection of paths",
+  "main": "index.js",
+  "dependencies": {
+    "coffeescript": "jashkenas/coffeescript",
+    "webshot":      "brenden/node-webshot",
+    "lodash":       "lodash/lodash",
+    "phantomjs":    "medium/phantomjs",
+    "decamelize":   "sindresorhus/decamelize"
+  },
+  "bin": {
+    "screenshotdiff": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diggabyte/node-screenshot-diff.git"
+  },
+  "keywords": [
+    "image",
+    "screenshot",
+    "diff"
+  ],
+  "author": "Scott Paradis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diggabyte/node-screenshot-diff/issues"
+  },
+  "homepage": "https://github.com/diggabyte/node-screenshot-diff"
+}
