@@ -1,8 +1,9 @@
 _       = require('lodash')
 program = require('commander')
+fs      = require('fs')
 
 program
-  .version('0.0.1')
+  .version(require(fs.realpathSync('package.json')).version)
   .usage('[options] <domain1> <domain2> <paths...>')
   .option('-x, --width <n>', 'Width in pixels of the screenshots. Default: 1400', 1400)
   .option('-y, --height <n>', 'Height in pixels of the screenshots. Default: all', 'all')
@@ -14,7 +15,7 @@ program
   .option('-f, --fuzz <n>', 'Compare fuzz threshold. Default: 5', 5)
   .option('-q, --quality <n>', 'Compare quality. Default: 100', 100)
   .option('-m, --metric <string>', 'Compare metric. Default: AE', 'AE')
-  .option('-C, --color <string>', 'Compare color. Default: blue', 'blue')
+  .option('-h, --color <string>', 'Compare color. Default: blue', 'blue')
   .option('-d, --delay <n>', 'Delay, in ms to wait before taking screenshot. Default: 100', 100)
   .option('-i, --ignoreSSLErrors', 'Ignore SSL certificate errors')
   .option('-q, --quiet', 'Supress logging information')
