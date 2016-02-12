@@ -3,6 +3,7 @@ sys         = require('sys')
 fs          = require('fs')
 exec        = require('child_process').exec
 webshot     = require('webshot')
+Promise     = require('promise')
 
 diff = (opts) ->
   try fs.mkdirSync opts.outputDir
@@ -15,23 +16,22 @@ diff = (opts) ->
     screen2     = "#{opts.outputDir}/#{index}_#{opts.domain2}_#{name}.png"
     screenDiff  = "#{opts.outputDir}/#{index}_diff_#{name}.png"
 
-    console.log("Capturing: #{url1}") unless opts.quiet
-    webshot url1, screen1, opts.webshotOpts, (err) ->
-      throw err if err
+    capture = (url, img) ->
+      new Promise (fulfill, reject) ->
+        console.log("Capturing: #{url}") unless opts.quiet
+        webshot url, img, opts.webshotOpts, (err) ->
+          if err then reject(err) else _.delay(fulfill, 500)
 
-      console.log("Capturing: #{url2}") unless opts.quiet
-      webshot url2, screen2, opts.webshotOpts, (err) ->
-        throw err if err
+    compare = ->
+      cmd = "compare #{opts.compareOpts} #{screen1} #{screen2} #{screenDiff}"
+      exec cmd, (err) ->
+        return console.error(err) if err
+        console.log("Created Diff: #{screenDiff}") unless opts.quiet
+        unless opts.keep
+          fs.unlink(screen1, ->)
+          fs.unlink(screen2, ->)
 
-        cmd = "compare #{opts.compareOpts} #{screen1} #{screen2} #{screenDiff}"
-        console.log(cmd)
-        exec cmd, (err) ->
-          if err
-            console.error err
-          else
-            console.log("Created Diff: #{screenDiff}") unless opts.quiet
-            unless opts.keep
-              fs.unlink(screen1, ->)
-              fs.unlink(screen2, ->)
+    capture(url1, screen1).then ->
+      capture(url2, screen2).then(compare)
 
 exports.diff = diff

@@ -1,13 +1,14 @@
 {
   "name": "node-screenshot-diff",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate screenshot diffs for a pair of domains and collection of paths",
-  "main": "index.js",
+  "main": "screenshotdiff.js",
   "dependencies": {
-    "coffeescript": "jashkenas/coffeescript",
-    "webshot": "brenden/node-webshot",
-    "lodash": "lodash/lodash",
-    "commander": "tj/commander.js"
+    "coffee-script": "~1.10",
+    "webshot": "~0.16",
+    "lodash": "~4.3",
+    "commander": "~2.9.0",
+    "promise": "~7.1"
   },
   "bin": {
     "screenshotdiff": "screenshotdiff.js"
