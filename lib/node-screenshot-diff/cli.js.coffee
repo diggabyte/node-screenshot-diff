@@ -16,7 +16,7 @@ program
   .option('-t, --threshold <n>', '(compare) The maximum distortion for (sub)image match. Default: 0.2)', parseFloat, 0.2)
   .option('-f, --fuzz <n>', '(compare) Colors within this distance, as a percentage, are considered equal (0-100). Default: 5', 5)
   .option('-m, --metric <string>', '(compare) Measure differences between images with this metric. Default: AE', 'AE')
-  .option('-h, --color <string>', '(compare) Emphasize pixel differences with this color. Default: blue', 'blue')
+  .option('-r, --color <string>', '(compare) Emphasize pixel differences with this color. Default: blue', 'blue')
   .option('-q, --quality <n>', 'Image quality. Default: 100', parseFloat, 100)
   .option('-i, --ignoreSSLErrors', 'Ignore SSL certificate errors')
   .option('-q, --quiet', 'Supress logging information')

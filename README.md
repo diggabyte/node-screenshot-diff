@@ -21,7 +21,7 @@ Requires ImageMagick to be installed. Depending on your system, one of the follo
 
     $ screenshotdiff --help
 
-      Usage: screenshotdiff [options] <domain1> <domain2> <paths...>
+      Usage: screenshotdiff [options] <domain1> <domain2> [paths...]
 
       Options:
 
@@ -29,16 +29,17 @@ Requires ImageMagick to be installed. Depending on your system, one of the follo
         -V, --version               output the version number
         -x, --width <n>             Width in pixels of the screenshots. Default: 1400
         -y, --height <n>            Height in pixels of the screenshots. Default: all
+        -s, --selector <string>     CSS selector to target for the screenshot
         -c, --css <string>          Custom CSS rules to apply before taking screenshot
+        -d, --delay <n>             Delay, in ms, to wait before taking screenshot. Default: 100
         -o, --outputDir <path>      The output dir for images
         -k, --keep                  Keep the A/B screenshots used for the diff
-        -p, --protocol <string>     Protocol to use. Default: "http"
-        -t, --threshold <n>         Compare dissimilarity threshold, in px. Default: 10
-        -f, --fuzz <n>              Compare fuzz threshold. Default: 5
-        -q, --quality <n>           Compare quality. Default: 100
-        -m, --metric <string>       Compare metric. Default: AE
-        -C, --color <string>        Compare color. Default: blue
-        -d, --delay <n>             Delay, in ms to wait before taking screenshot. Default: 100
+        -p, --protocol <string>     Protocol to use. Default: http
+        -t, --threshold <n>         (compare) The maximum distortion for (sub)image match. Default: 0.2)
+        -f, --fuzz <n>              (compare) Colors within this distance, as a percentage, are considered equal (0-100). Default: 5
+        -m, --metric <string>       (compare) Measure differences between images with this metric. Default: AE
+        -r, --color <string>        (compare) Emphasize pixel differences with this color. Default: blue
+        -q, --quality <n>           Image quality. Default: 100
         -i, --ignoreSSLErrors       Ignore SSL certificate errors
         -q, --quiet                 Supress logging information
         -P, --phantomConfig <json>  JSON string of PhantomJS configuration options
