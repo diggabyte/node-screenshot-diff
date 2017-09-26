@@ -1,6 +1,6 @@
 {
   "name": "node-screenshot-diff",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Generate screenshot diffs for a pair of domains and collection of paths",
   "main": "screenshotdiff.js",
   "dependencies": {

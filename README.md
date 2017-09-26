@@ -17,7 +17,7 @@ Requires ImageMagick to be installed. Depending on your system, one of the follo
 
 ## Usage
 
-    $ npm install -g screenshot-diff
+    $ npm install -g node-screenshot-diff
 
     $ screenshotdiff --help
 
