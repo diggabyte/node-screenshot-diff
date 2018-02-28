@@ -1,3 +1,5 @@
+# No longer being actively maintained and probably doesn't work without some tweaking
+
 # node-screenshot-diff
 
 Generate screenshot diffs for a pair domains and one or more paths.
